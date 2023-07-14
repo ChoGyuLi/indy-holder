@@ -16,6 +16,7 @@ object WalletConfig {
     private val walletConfig = JSONObject().put("id", WALLET_ID).toString()
     private val walletCredentials = JSONObject().put("key", WALLET_KEY).toString()
 
+    @JvmStatic
     fun createWallet(context: Context): CompletableFuture<Void> {
         if (FileUtils.getFile("${context.dataDir}/.indy_client/wallet/$WALLET_ID").isDirectory) {
             return CompletableFuture.completedFuture(null)
@@ -24,13 +25,16 @@ object WalletConfig {
         return Wallet.createWallet(walletConfig, walletCredentials)
     }
 
+    @JvmStatic
     fun openWallet(): CompletableFuture<Wallet> {
         return Wallet.openWallet(walletConfig, walletCredentials)
     }
 
+    @JvmStatic
     fun createMasterSecret(wallet: Wallet, masterSecretId: String? = null): String =
         Anoncreds.proverCreateMasterSecret(wallet, masterSecretId).get()
 
+    @JvmStatic
     fun createDid(wallet: Wallet): CompletableFuture<Pair<String, String>> {
         return Did.createAndStoreMyDid(wallet, "{}")
             .thenApply {

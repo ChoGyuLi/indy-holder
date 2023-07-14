@@ -13,6 +13,7 @@ object PoolConfig {
     private const val PROTOCOL_VERSION = 2
     private const val POOL_NAME = "holder_pool"
 
+    @JvmStatic
     fun getPoole(context: Context): String {
         return if (FileUtils.getFile("${context.dataDir}/.indy_client/pool/$POOL_NAME").isDirectory) POOL_NAME
         else createPool(context)

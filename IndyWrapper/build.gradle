@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
 
     implementation 'net.java.dev.jna:jna:4.5.2'
-    implementation 'org.hyperledger:indy:1.16.0'                        //indy wrapper library
+    api 'org.hyperledger:indy:1.16.0'                        //indy wrapper library
     implementation 'com.google.code.gson:gson:2.9.0'                    //JSON parser
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'              //HTTP network library
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")

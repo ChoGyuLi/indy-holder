@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import kr.co.bdgen.indywrapper.data.payload.OfferPayload;
 import kr.co.bdgen.indywrapper.repository.CredentialRepository;
@@ -20,12 +21,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //activity_main.xml 에서 text 값을 getCredential 함수를 통해 리턴받은 credential(JSON) 값을 화면에 출력함
+        TextView text = (TextView) findViewById(R.id.txt_main);
+        String credJsonArray = getCredential();
+        text.setText(credJsonArray);
+
         //deeplink 처리
         //deeplink = indy://holder?secret=blarblar
         //scheme = indy
         //host = holder
         //queryParameter = secret
-        Uri data = getIntent().getData();//MainActivity-Manifest에서 intent의 <data>를 가져옴
+        Uri data = getIntent().getData(); //MainActivity-Manifest에서 intent의 <data>를 가져옴
 
         if(data == null)
             return;

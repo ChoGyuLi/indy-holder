@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import kr.co.bdgen.indywrapper.data.payload.OfferPayload;
+import kr.co.bdgen.indywrapper.repository.CredentialRepository;
 import kr.co.bdgen.indywrapper.repository.IssuingRepository;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                             offer,
                             (credentialInfo, issuePayload) -> {
                                 Log.d(
-                                        "[SUCCESS!]",
+                                        "[SUCCESS]",
                                         credentialInfo.getCredReqMetadataJson() +
                                                 "\n" +
                                                 credentialInfo.getCredReqJson() +
@@ -61,7 +62,20 @@ public class MainActivity extends AppCompatActivity {
                                 );
 
                                 //3. store credential
-//                                repository.storeCredential();
+                                //이슈잉을 마치고 크래딧을 만들었고,이를 저장하기 위한 지갑을 만드는 과정. sqllite에 credential이 저장됨
+                                repository.storeCredential(
+                                        MyApplication.getWallet(),
+                                        credentialInfo,
+                                        issuePayload, // 이슈잉해서 받은 정보들
+                                        cred -> {
+                                            Log.i("[SUCCESS]","credential = " + cred);
+                                            return null;
+                                        },
+                                        error -> {
+                                            Log.e("[ERROR!]",error.getMessage(),error);
+                                            return null;
+                                        }
+                                );
                                 return null;
                             },
                             throwable -> {
@@ -77,10 +91,21 @@ public class MainActivity extends AppCompatActivity {
                     return null;
                 }
         );
-        //이슈잉을 마치고 크래딧을 만들었음, 이를 저장하기 위한 지갑을 만들어야함
 
 
-        //3.
+    }
 
+    /**
+     * 저장한 credential 정보를 받아오기 위한 함수
+     * @return credential json array를 담은 raw data
+     */
+    private String getCredential() {
+        String credential;
+        CredentialRepository credentialRepository = new CredentialRepository();
+        credential = credentialRepository.getRawCredentials(
+                MyApplication.getWallet(),
+                "{}"
+        );
+        return credential;
     }
 }

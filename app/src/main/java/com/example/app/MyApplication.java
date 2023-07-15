@@ -1,6 +1,7 @@
 package com.example.app;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
@@ -22,6 +23,27 @@ public class MyApplication extends Application {
     public static final String PREF_KEY_DID = "PREF_KEY_DID";
     public static final String PREF_KEY_VER_KEY = "PREF_KEY_VER_KEY";
     public static final String PREF_KEY_MASTER_SECRET = "PREF_KEY_MASTER_SECRET";
+    private static Wallet wallet;
+
+    // 자주 사용하기 때문에 함수로 처리(wallet,did,masterSecret)
+    public static Wallet getWallet() {
+        return wallet;
+    }
+
+    public static String getDid(Context context) {
+        //preference 자체를 가져와서 pref에 저장, did 변수에 PREF_KEY_DID가 있으면 가져오고 없으면 빈캆 리턴
+        String did = null;
+        SharedPreferences pref = context.getSharedPreferences(WALLET_PREFERENCES,MODE_PRIVATE);
+        did = pref.getString(PREF_KEY_DID,"");
+        return did;
+    }
+
+    public static String getMasterSecret(Context context) {
+        String masterSecret = null;
+        SharedPreferences pref = context.getSharedPreferences(WALLET_PREFERENCES,MODE_PRIVATE);
+        masterSecret = pref.getString(PREF_KEY_MASTER_SECRET,"");
+        return masterSecret;
+    }
 
     @Override
     public void onCreate() {
@@ -41,7 +63,7 @@ public class MyApplication extends Application {
             WalletConfig.createWallet(this).get();
 
             //5. wallet 열기
-            Wallet wallet = WalletConfig.openWallet().get();
+            wallet = WalletConfig.openWallet().get();
 
             //6. 지갑에서 아이디 카드 생성 -> did,verKey(암호화를 풀기위해 사용) 생성
             Pair<String, String> didAndVerKey = WalletConfig.createDid(wallet).get();

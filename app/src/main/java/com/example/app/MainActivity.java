@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import kr.co.bdgen.indywrapper.data.payload.IssuePayload;
 import kr.co.bdgen.indywrapper.data.payload.OfferPayload;
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView text = (TextView) findViewById(R.id.txt_main);
+        String credJsonArray = getCredential();
+        text.setText(credJsonArray);
 
         //deeplink처리
         //deeplink = indy://holder?secret = blarblar

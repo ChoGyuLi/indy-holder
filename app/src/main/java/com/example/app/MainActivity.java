@@ -34,13 +34,42 @@ public class MainActivity extends AppCompatActivity {
         Log.d("[SUCCESS]",secret);
 
 
-        //1. offer 받기(이슈잉 ?)
+        //1. offer 받기(이슈잉 : 증명서를 발급하는 것)
         IssuingRepository repository = new IssuingRepository(); //레퍼지토리 객체 생성
-        repository.reuqestOffer( //시크릿 값, 성공했을 경우 실행될 내용, 실패했을 때 실행될 내용 선언
+        repository.reuqestOffer(
                 secret,
                 offerPayload -> {
                     Log.d("[SUCCESS!]",offerPayload.getCredDefJson() + "\n" + offerPayload.getCredOfferJson());
                     offer = offerPayload;
+
+                    //2. request and issue credential
+                    repository.requestCredential(
+                            MyApplication.getWallet(),
+                            MyApplication.getDid(this),
+                            MyApplication.getMasterSecret(this),
+                            secret,
+                            offer,
+                            (credentialInfo, issuePayload) -> {
+                                Log.d(
+                                        "[SUCCESS!]",
+                                        credentialInfo.getCredReqMetadataJson() +
+                                                "\n" +
+                                                credentialInfo.getCredReqJson() +
+                                                "\n" +
+                                                credentialInfo.getCredDefJson()
+
+                                );
+
+                                //3. store credential
+//                                repository.storeCredential();
+                                return null;
+                            },
+                            throwable -> {
+                                Log.e("[ERROR!]",throwable.getMessage(),throwable);
+                                return null;
+                            }
+                    );
+
                     return null;
                 },
                 error -> {
@@ -48,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     return null;
                 }
         );
-
-        //2. request and issue credential
+        //이슈잉을 마치고 크래딧을 만들었음, 이를 저장하기 위한 지갑을 만들어야함
 
 
         //3.

@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.co.bdgen.indywrapper.data.Credential;
 import lec.baekseokuni.indyholder.databinding.ItemCredentialBinding;
@@ -35,9 +36,26 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         Credential credData = credentialList.get(position);
         holder.itemView.setOnClickListener(onNavCred);
-        holder.txtCredId.setText(credData.getId());
-        holder.txtSchemaId.setText(credData.getSchemaId());
-        holder.txtCredDefId.setText(credData.getCredDefId());
+        Map<String,String> attributes = credData.getAttrs();
+
+        String userName = attributes.get("name");
+        holder.userName.setText(userName);
+
+        String accountNumber = attributes.get("account_number");
+        holder.accountNumber.setText(accountNumber);
+
+        String companyRegistrationNumber = attributes.get("company_registration_number");
+        holder.companyRegistrationNumber.setText(companyRegistrationNumber);
+
+        String packagingDate = attributes.get("packaging_date");
+        holder.packagingDate.setText(packagingDate);
+
+        String reusableCup = attributes.get("reusable_cup");
+        holder.reusableCup.setText(reusableCup);
+
+        String reusableContainer = attributes.get("reusable_container");
+        holder.reusableContainer.setText(reusableContainer);
+
     }
 
     @Override
@@ -46,21 +64,27 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView txtCredId;
-        public final TextView txtSchemaId;
-        public final TextView txtCredDefId;
-
+        public final TextView userName;
+        public final TextView accountNumber;
+        public final TextView companyRegistrationNumber;
+        public final TextView packagingDate;
+        public final TextView reusableCup;
+        public final TextView reusableContainer;
         public ViewHolder(ItemCredentialBinding binding) {
             super(binding.getRoot());
-            txtCredId = binding.txtCredId;
-            txtSchemaId = binding.txtSchemaId;
-            txtCredDefId = binding.txtCredDefId;
+            userName = binding.userName;
+            accountNumber = binding.accountNumber;
+            companyRegistrationNumber = binding.companyRegistrationNumber;
+            packagingDate = binding.packagingDate;
+            reusableCup = binding.reusableCup;
+            reusableContainer = binding.reusableContainer;
+
         }
 
         @NonNull
         @Override
         public String toString() {
-            return super.toString() + " '" + txtCredId.getText() + "'";
+            return super.toString() + " '" + userName.getText() + "'";
         }
     }
 }

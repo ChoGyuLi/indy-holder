@@ -12,17 +12,38 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Hello, DID Holder!" />
+        android:text="Use of multiple containers"
+        android:textStyle="bold"
+        android:textSize="35sp" />
+
+    <ImageView
+        android:layout_width="1000px"
+        android:layout_height="1000px"
+        android:layout_gravity="center"
+        android:src="@drawable/earth" />
+
 
     <Button
-        android:id="@+id/btn_issue_test_cred"
+        android:id="@+id/btn_starbucks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="테스트 증명서 발급" />
+        android:text="스타벅스" />
 
     <Button
-        android:id="@+id/btn_nav_to_cred_list"
+        android:id="@+id/btn_burgerking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="증명서 목록 조회" />
+        android:text="버거킹" />
+
+    <Button
+        android:id="@+id/btn_twosome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="투썹플레이스" />
+
+    <Button
+        android:id="@+id/btn_popeyes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="파파이스" />
 </LinearLayout>

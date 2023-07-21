@@ -1,5 +1,7 @@
 package lec.baekseokuni.indyholder.credential;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +19,6 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
 
     private final List<Credential> credentialList;
 
-    private final View.OnClickListener onNavCred = v -> {
-
-    };
-
     public CredentialRecyclerViewAdapter(List<Credential> items) {
         credentialList = items;
     }
@@ -34,7 +32,11 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         Credential credData = credentialList.get(position);
-        holder.itemView.setOnClickListener(onNavCred);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), CredentialActivity.class);
+            intent.putExtra(CredentialActivity.INTENT_EXTRA_ARG_KEY_CRED, (Parcelable) credData);
+            v.getContext().startActivity(intent);
+        });
         holder.txtCredId.setText(credData.getId());
         holder.txtSchemaId.setText(credData.getSchemaId());
         holder.txtCredDefId.setText(credData.getCredDefId());

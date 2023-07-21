@@ -19,31 +19,48 @@
     <ImageView
         android:layout_width="1000px"
         android:layout_height="1000px"
+        android:layout_weight="1"
         android:layout_gravity="center"
         android:src="@drawable/earth" />
 
 
-    <Button
-        android:id="@+id/btn_starbucks"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="스타벅스" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/btn_burgerking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="버거킹" />
+        <Button
+            android:id="@+id/btn_starbucks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="스타벅스" />
 
-    <Button
-        android:id="@+id/btn_twosome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="투썹플레이스" />
+        <Button
+            android:id="@+id/btn_burgerking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="버거킹" />
 
-    <Button
-        android:id="@+id/btn_popeyes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="파파이스" />
+        <Button
+            android:id="@+id/btn_twosome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="투썹플레이스" />
+
+        <Button
+            android:id="@+id/btn_popeyes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="파파이스" />
+
+    </GridLayout>
+
 </LinearLayout>

@@ -17,7 +17,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#d09aff"
+            android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
             android:text="secret" />
 
@@ -40,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#d09aff"
+            android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
             android:text="offer" />
 
@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#d09aff"
+            android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
             android:text="credReq" />
 
@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#d09aff"
+            android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
             android:text="issue" />
 
@@ -112,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#d09aff"
+            android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
             android:text="cred id" />
 

@@ -65,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
         Button btnTwosome = findViewById(R.id.btn_twosome);
         Button btnStarpopeyes = findViewById(R.id.btn_popeyes);
 
-        Button btnNavToCredList = findViewById(R.id.btn_nav_to_cred_list);
+
 //        btnIssueTest.setOnClickListener(onStartDeeplink);
         btnStarbucks.setOnClickListener(onStartDeeplinkS);
         btnBurgerking.setOnClickListener(onStartDeeplinkB);
         btnTwosome.setOnClickListener(onStartDeeplinkT);
         btnStarpopeyes.setOnClickListener(onStartDeeplinkP);
-        btnNavToCredList.setOnClickListener(onNavToCredList);
+
     }
 }

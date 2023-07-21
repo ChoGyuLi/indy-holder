@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,55 +13,67 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="Use of multiple containers"
-        android:textStyle="bold"
         android:textColor="#000080"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/murukmuruk"/>
 
     <ImageView
         android:layout_width="1000px"
         android:layout_height="1000px"
-        android:layout_weight="1"
         android:layout_gravity="center"
+        android:layout_weight="0.5"
         android:src="@drawable/earth" />
-
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_weight="2"
         android:columnCount="2"
-        android:rowCount="2"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:rowCount="3">
 
         <Button
             android:id="@+id/btn_starbucks"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_columnWeight="1"
-            android:text="스타벅스" />
+            android:text="스타벅스"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_burgerking"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_columnWeight="1"
-            android:text="버거킹" />
+            android:text="버거킹"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_twosome"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_columnWeight="1"
-            android:text="투썹플레이스" />
+            android:text="투썸플레이스"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_popeyes"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_columnWeight="1"
-            android:text="파파이스" />
+            android:text="파파이스"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_nav_to_cred_list"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_columnWeight="2"
+            android:layout_columnSpan="2"
+            android:text="증명서 목록 조회"
+            android:textSize="20sp" />
 
     </GridLayout>
-
 </LinearLayout>

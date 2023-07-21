@@ -66,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
         Button btnStarpopeyes = findViewById(R.id.btn_popeyes);
 
 
-//        btnIssueTest.setOnClickListener(onStartDeeplink);
+        Button navCredList = findViewById(R.id.btn_nav_to_cred_list);
         btnStarbucks.setOnClickListener(onStartDeeplinkS);
         btnBurgerking.setOnClickListener(onStartDeeplinkB);
         btnTwosome.setOnClickListener(onStartDeeplinkT);
         btnStarpopeyes.setOnClickListener(onStartDeeplinkP);
+        navCredList.setOnClickListener(onNavToCredList);
 
     }
 }

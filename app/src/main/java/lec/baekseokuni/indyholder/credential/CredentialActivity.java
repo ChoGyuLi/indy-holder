@@ -3,13 +3,20 @@ package lec.baekseokuni.indyholder.credential;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import kr.co.bdgen.indywrapper.data.Credential;
 import lec.baekseokuni.indyholder.R;
 
 public class CredentialActivity extends AppCompatActivity {
+    public static final String INTENT_EXTRA_ARG_KEY_CRED = "INTENT_EXTRA_ARG_KEY_CRED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,16 @@ public class CredentialActivity extends AppCompatActivity {
             appBar.setTitle("증명서 상세");
             appBar.setDisplayHomeAsUpEnabled(true);
         }
+        //증명서 목록에서 받아온 상세 증명서 데이터
+        Credential cred = getIntent().getParcelableExtra(INTENT_EXTRA_ARG_KEY_CRED);
+        if (cred == null)
+            return;
+        Map<String, String> attrs = cred.getAttrs();
+        if (attrs == null)
+            attrs = new HashMap<>();
+        RecyclerView rvAttributes = findViewById(R.id.list_attribute);
+        AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);
+        rvAttributes.setAdapter(adapter);
     }
 
     @Override

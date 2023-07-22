@@ -44,22 +44,22 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
         Map<String,String> attributes = credData.getAttrs();
 
         String userName = attributes.get("name");
-        holder.userName.setText(userName);
+        holder.binding.userName.setText(userName);
 
         String accountNumber = attributes.get("account_number");
-        holder.accountNumber.setText(accountNumber);
+        holder.binding.accountNumber.setText(accountNumber);
 
         String companyRegistrationNumber = attributes.get("company_registration_number");
-        holder.companyRegistrationNumber.setText(companyRegistrationNumber);
+        holder.binding.companyRegistrationNumber.setText(companyRegistrationNumber);
 
         String packagingDate = attributes.get("packaging_date");
-        holder.packagingDate.setText(packagingDate);
+        holder.binding.packagingDate.setText(packagingDate);
 
         String reusableCup = attributes.get("reusable_cup");
-        holder.reusableCup.setText(reusableCup);
+        holder.binding.reusableCup.setText(reusableCup);
 
         String reusableContainer = attributes.get("reusable_container");
-        holder.reusableContainer.setText(reusableContainer);
+        holder.binding.reusableContainer.setText(reusableContainer);
 
     }
 

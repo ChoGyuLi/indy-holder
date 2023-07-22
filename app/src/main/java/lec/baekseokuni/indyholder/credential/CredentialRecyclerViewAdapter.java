@@ -56,10 +56,10 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
         holder.binding.packagingDate.setText(packagingDate);
 
         String reusableCup = attributes.get("reusable_cup");
-        holder.binding.reusableCup.setText(reusableCup);
+        holder.binding.reusableCup.setText(reusableCup != null && reusableCup.equals("TRUE") ? "o" : "x");
 
         String reusableContainer = attributes.get("reusable_container");
-        holder.binding.reusableContainer.setText(reusableContainer);
+        holder.binding.reusableContainer.setText(reusableContainer != null && reusableContainer.equals("TRUE") ? "o" : "x");
 
     }
 

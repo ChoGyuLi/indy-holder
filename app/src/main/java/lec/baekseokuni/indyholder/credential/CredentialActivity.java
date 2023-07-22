@@ -36,7 +36,15 @@ public class CredentialActivity extends AppCompatActivity {
             attrs = new HashMap<>();
 
         TextView txt = findViewById(R.id.txt_schema_id_in_detail);
-        txt.setText(cred.getSchemaId());
+        String schemaId = cred.getSchemaId();
+        if(schemaId != null) {
+            if(schemaId.contains("use-of-multiple-containers")) {
+                txt.setText("다회용기 사용 증명서");
+            }
+            else {
+                txt.setText(schemaId);
+            }
+        }
 
         RecyclerView rvAttributes = findViewById(R.id.list_attribute);
         AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);

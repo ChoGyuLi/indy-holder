@@ -49,6 +49,8 @@ public class CredentialActivity extends AppCompatActivity {
         RecyclerView rvAttributes = findViewById(R.id.list_attribute);
         AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);
         rvAttributes.setAdapter(adapter);
+
+
     }
 
     @Override

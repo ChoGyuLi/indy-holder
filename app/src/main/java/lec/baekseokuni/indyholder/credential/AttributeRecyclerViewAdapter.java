@@ -32,8 +32,17 @@ public class AttributeRecyclerViewAdapter extends RecyclerView.Adapter<Attribute
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Map.Entry<String, String> attribute = attrList.get(position);
         holder.txtAttrName.setText(attribute.getKey());
-        holder.txtAttrValue.setText(attribute.getValue());
+
+        String key = attribute.getKey();
+        String value = attribute.getValue();
+
+        if (key.equals("reusable_cup") || key.equals("reusable_container")) {
+            value = value.equals("TRUE") ? "O" : "X";
+        }
+        holder.txtAttrValue.setText(value);
     }
+
+
 
     @Override
     public int getItemCount() {

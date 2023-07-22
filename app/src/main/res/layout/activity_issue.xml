@@ -10,8 +10,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="0dp"
@@ -19,6 +21,8 @@
             android:layout_weight="0.2"
             android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
             android:text="secret" />
 
         <TextView
@@ -27,14 +31,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.5"
             android:text="get secret" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="0dp"
@@ -42,6 +51,8 @@
             android:layout_weight="0.2"
             android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
             android:text="offer" />
 
         <TextView
@@ -51,14 +62,19 @@
             android:layout_weight="0.8"
             android:maxLines="10"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.5"
             android:text="get offer" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="0dp"
@@ -66,6 +82,8 @@
             android:layout_weight="0.2"
             android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
             android:text="credReq" />
 
         <TextView
@@ -75,14 +93,19 @@
             android:layout_weight="0.8"
             android:maxLines="10"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.5"
             android:text="create credential request" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="0dp"
@@ -90,6 +113,8 @@
             android:layout_weight="0.2"
             android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
             android:text="issue" />
 
         <TextView
@@ -99,14 +124,19 @@
             android:layout_weight="0.8"
             android:maxLines="10"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.5"
             android:text="issue payload" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="0dp"
@@ -114,6 +144,8 @@
             android:layout_weight="0.2"
             android:background="#a6cf8f"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
             android:text="cred id" />
 
         <TextView
@@ -123,6 +155,9 @@
             android:layout_weight="0.8"
             android:maxLines="10"
             android:paddingHorizontal="5dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.5"
             android:text="credential id (referent)" />
     </LinearLayout>
 </LinearLayout>

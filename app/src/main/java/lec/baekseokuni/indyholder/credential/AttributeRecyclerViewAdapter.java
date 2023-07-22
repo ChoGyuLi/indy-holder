@@ -30,7 +30,9 @@ public class AttributeRecyclerViewAdapter extends RecyclerView.Adapter<Attribute
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Map.Entry<String, String> attribute = attrList.get(position);
+        holder.txtAttrName.setText(attribute.getKey());
+        holder.txtAttrValue.setText(attribute.getValue());
     }
 
     @Override

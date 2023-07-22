@@ -25,28 +25,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testDeeplink));
         startActivity(intent);
         finish();
-    };
+    }; // 김민서
 
     View.OnClickListener onStartDeeplinkB = v -> {
         String testDeeplink = "indy://holder?secret=N2vfEEpvNy";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testDeeplink));
         startActivity(intent);
         finish();
-    };
+    }; // 고유정
 
     View.OnClickListener onStartDeeplinkT = v -> {
         String testDeeplink = "indy://holder?secret=iyRJiKVV2T";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testDeeplink));
         startActivity(intent);
         finish();
-    };
+    }; // 이서현
 
     View.OnClickListener onStartDeeplinkP = v -> {
         String testDeeplink = "indy://holder?secret=CchCybr0oB";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testDeeplink));
         startActivity(intent);
         finish();
-    };
+    }; // 조규리
 
 
     View.OnClickListener onNavToCredList = v -> {

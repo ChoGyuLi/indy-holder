@@ -34,6 +34,10 @@ public class CredentialActivity extends AppCompatActivity {
         Map<String, String> attrs = cred.getAttrs();
         if (attrs == null)
             attrs = new HashMap<>();
+
+        TextView txt = findViewById(R.id.txt_schema_id_in_detail);
+        txt.setText(cred.getSchemaId());
+
         RecyclerView rvAttributes = findViewById(R.id.list_attribute);
         AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);
         rvAttributes.setAdapter(adapter);

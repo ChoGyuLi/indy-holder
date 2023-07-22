@@ -5,8 +5,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -17,6 +21,14 @@ import lec.baekseokuni.indyholder.R;
 
 public class CredentialActivity extends AppCompatActivity {
     public static final String INTENT_EXTRA_ARG_KEY_CRED = "INTENT_EXTRA_ARG_KEY_CRED";
+    View.OnClickListener submit = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //verify 딥링크 실행
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("indy://verify?schemaId=EtAGQxkwjMBgCkG4M6jXjP:2:use-of-multiple-containers:1.1"));
+            startActivity(intent);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +62,8 @@ public class CredentialActivity extends AppCompatActivity {
         AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);
         rvAttributes.setAdapter(adapter);
 
-
+//        Button submitButton = findViewById(R.id.del_btn);
+//        submitButton.setOnClickListener(submit);
     }
 
     @Override

@@ -46,12 +46,6 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
         String userName = attributes.get("name");
         holder.binding.userName.setText(userName);
 
-        String accountNumber = attributes.get("account_number");
-        holder.binding.accountNumber.setText(accountNumber);
-
-        String companyRegistrationNumber = attributes.get("company_registration_number");
-        holder.binding.companyRegistrationNumber.setText(companyRegistrationNumber);
-
         String packagingDate = attributes.get("packaging_date");
         holder.binding.packagingDate.setText(packagingDate);
 

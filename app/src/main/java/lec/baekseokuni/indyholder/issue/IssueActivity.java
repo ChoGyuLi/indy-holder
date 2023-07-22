@@ -88,7 +88,7 @@ public class IssueActivity extends AppCompatActivity {
                         storeCredential(credentialInfo, issuePayload);
                     };
                     AlertDialog.Builder alert = new AlertDialog.Builder(this)
-                            .setTitle("증명설 발급")
+                            .setTitle("증명서 발급")
                             .setCancelable(false)
                             .setMessage("발급한 증명서를 저장하시겠습니까?")
                             .setPositiveButton("증명서 저장", onClickPositive)

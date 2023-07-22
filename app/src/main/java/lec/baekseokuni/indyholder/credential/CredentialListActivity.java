@@ -34,9 +34,10 @@ public class CredentialListActivity extends AppCompatActivity {
         adapter.setOnDeleteCred(credential -> {
             new AlertDialog.Builder(this)
                     .setTitle("증명서 삭제")
-                    .setMessage("증명서 삭제?")
+                    .setMessage("증명서를 삭제하시겠습니까?")
                     .setCancelable(false)
-                    .setPositiveButton("확인", (dialog, which) -> {
+                    .setPositiveButton("삭제", (dialog, which) -> {
+                        // 삭제 버튼을 눌렀을 때 처리하는 부분
                         repository.deleteCredential(
                                 MyApplication.getWallet(),
                                 credential.getId(),
@@ -46,8 +47,11 @@ public class CredentialListActivity extends AppCompatActivity {
                                 (t) -> {
                                     t.printStackTrace();
                                 }
-
                         );
+                    })
+                    .setNegativeButton("취소", (dialog, which) -> {
+                        // 취소 버튼을 눌렀을 때 처리하는 부분
+                        dialog.dismiss(); // 대화상자를 닫음
                     })
                     .show();
         });

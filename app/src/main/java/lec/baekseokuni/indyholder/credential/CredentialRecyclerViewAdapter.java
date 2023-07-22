@@ -3,14 +3,14 @@ package lec.baekseokuni.indyholder.credential;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.Map;
 
 import kr.co.bdgen.indywrapper.data.Credential;
@@ -18,11 +18,9 @@ import lec.baekseokuni.indyholder.databinding.ItemCredentialBinding;
 
 public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<CredentialRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Credential> credentialList;
-
-    public CredentialRecyclerViewAdapter(List<Credential> items) {
-        credentialList = items;
-    }
+    private List<Credential> credentialList;
+    @Nullable
+    private Consumer<Credential> onDeleteCred;
 
     @NonNull
     @Override
@@ -37,6 +35,11 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
             Intent intent = new Intent(v.getContext(), CredentialActivity.class);
             intent.putExtra(CredentialActivity.INTENT_EXTRA_ARG_KEY_CRED, (Parcelable) credData);
             v.getContext().startActivity(intent);
+        });
+        holder.binding.btnDeleteCred.setOnClickListener(v -> {
+            if (onDeleteCred == null)
+                return;
+            onDeleteCred.accept(credData);
         });
         Map<String,String> attributes = credData.getAttrs();
 
@@ -65,28 +68,22 @@ public class CredentialRecyclerViewAdapter extends RecyclerView.Adapter<Credenti
         return credentialList.size();
     }
 
+    public void setCredentialList(List<Credential> credentialList) {
+        this.credentialList = credentialList;
+        notifyDataSetChanged();
+    }
+
+    public void setOnDeleteCred(@Nullable Consumer<Credential> onDeleteCred) {
+        this.onDeleteCred = onDeleteCred;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView userName;
-        public final TextView accountNumber;
-        public final TextView companyRegistrationNumber;
-        public final TextView packagingDate;
-        public final TextView reusableCup;
-        public final TextView reusableContainer;
+        public final ItemCredentialBinding binding;
+
         public ViewHolder(ItemCredentialBinding binding) {
             super(binding.getRoot());
-            userName = binding.userName;
-            accountNumber = binding.accountNumber;
-            companyRegistrationNumber = binding.companyRegistrationNumber;
-            packagingDate = binding.packagingDate;
-            reusableCup = binding.reusableCup;
-            reusableContainer = binding.reusableContainer;
+            this.binding = binding;
 
-        }
-
-        @NonNull
-        @Override
-        public String toString() {
-            return super.toString() + " '" + userName.getText() + "'";
         }
     }
 }

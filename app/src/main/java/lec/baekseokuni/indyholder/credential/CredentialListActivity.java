@@ -1,14 +1,14 @@
 package lec.baekseokuni.indyholder.credential;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 import kr.co.bdgen.indywrapper.data.Credential;
@@ -17,7 +17,8 @@ import lec.baekseokuni.indyholder.MyApplication;
 import lec.baekseokuni.indyholder.R;
 
 public class CredentialListActivity extends AppCompatActivity {
-    CredentialRepository repository = new CredentialRepository();
+    private final CredentialRepository repository = new CredentialRepository();
+    private final CredentialRecyclerViewAdapter adapter = new CredentialRecyclerViewAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +30,34 @@ public class CredentialListActivity extends AppCompatActivity {
             appBar.setDisplayHomeAsUpEnabled(true);
         }
         RecyclerView rvCredList = findViewById(R.id.list_credential);
-        List<Credential> credentialList = getCredentialList();
-        CredentialRecyclerViewAdapter adapter = new CredentialRecyclerViewAdapter(credentialList);
+
+        adapter.setOnDeleteCred(credential -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("증명서 삭제")
+                    .setMessage("증명서 삭제?")
+                    .setCancelable(false)
+                    .setPositiveButton("확인", (dialog, which) -> {
+                        repository.deleteCredential(
+                                MyApplication.getWallet(),
+                                credential.getId(),
+                                () -> {
+                                    updateCredentialList();
+                                },
+                                (t) -> {
+                                    t.printStackTrace();
+                                }
+
+                        );
+                    })
+                    .show();
+        });
         rvCredList.setAdapter(adapter);
+        updateCredentialList();
     }
 
-    private List<Credential> getCredentialList() {
+    private void updateCredentialList() {
         List<Credential> credentialList = repository.getCredentialList(MyApplication.getWallet(), null);
-        return credentialList;
+        adapter.setCredentialList(credentialList);
     }
 
     @Override

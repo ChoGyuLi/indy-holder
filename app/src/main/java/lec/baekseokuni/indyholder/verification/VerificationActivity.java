@@ -239,7 +239,7 @@ public class VerificationActivity extends AppCompatActivity {
                                     finish();
                                 };
                                 AlertDialog.Builder alert = new AlertDialog.Builder(this)
-                                        .setTitle("증명설 제출 결과")
+                                        .setTitle("증명서 제출 결과")
                                         .setCancelable(false)
                                         .setMessage("기관 검증 결과: " + result)
                                         .setPositiveButton("확인", onClickPositive);

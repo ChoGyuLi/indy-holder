@@ -28,18 +28,15 @@ public class VerificationRecyclerViewAdapter extends RecyclerView.Adapter<Verifi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RequestedAttributeSearchedItem item = items.get(position);
-        holder.binding.txtRequestedAttributeKey.setText(item.getRequestedAttributeKey());
         holder.binding.txtAttributeName.setText(item.getRequestedAttribute().getName());
         Credential credential = item.getSelectedCredential();
         Map<String, String> attrs = credential != null ? credential.getAttrs() : null;
-        holder.binding.txtCredDefId.setText(credential != null ? credential.getCredDefId() : null);
-        holder.binding.txtCredId.setText(credential != null ? credential.getId() : null);
         holder.binding.txtAttributeValue.setText(
                 attrs != null
                         ? attrs.get(item.getRequestedAttribute().getName())
                         : null
         );
-    }
+    } // 계좌번호, 사업자등록번호 빼
 
     @Override
     public int getItemCount() {

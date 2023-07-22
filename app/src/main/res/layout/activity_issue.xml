@@ -16,13 +16,15 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_weight="0.2"
             android:background="#a6cf8f"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="10dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#5D5D5D"
             android:text="secret" />
 
         <TextView
@@ -34,6 +36,7 @@
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.5"
+            android:textColor="#5D5D5D"
             android:text="get secret" />
     </LinearLayout>
 
@@ -46,13 +49,15 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_weight="0.2"
             android:background="#a6cf8f"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="10dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#5D5D5D"
             android:text="offer" />
 
         <TextView
@@ -63,6 +68,7 @@
             android:maxLines="10"
             android:paddingHorizontal="5dp"
             android:fontFamily="@font/gmarketmedium"
+            android:textColor="#5D5D5D"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.5"
             android:text="get offer" />
@@ -77,13 +83,15 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_weight="0.2"
             android:background="#a6cf8f"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="10dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#5D5D5D"
             android:text="credReq" />
 
         <TextView
@@ -95,6 +103,7 @@
             android:paddingHorizontal="5dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:textColor="#5D5D5D"
             android:lineSpacingMultiplier="1.5"
             android:text="create credential request" />
     </LinearLayout>
@@ -108,13 +117,15 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_weight="0.2"
             android:background="#a6cf8f"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="10dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#5D5D5D"
             android:text="issue" />
 
         <TextView
@@ -124,6 +135,7 @@
             android:layout_weight="0.8"
             android:maxLines="10"
             android:paddingHorizontal="5dp"
+            android:textColor="#5D5D5D"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.5"
@@ -139,13 +151,15 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_weight="0.2"
             android:background="#a6cf8f"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="10dp"
             android:fontFamily="@font/gmarketmedium"
             android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#5D5D5D"
             android:text="cred id" />
 
         <TextView
@@ -156,6 +170,7 @@
             android:maxLines="10"
             android:paddingHorizontal="5dp"
             android:fontFamily="@font/gmarketmedium"
+            android:textColor="#5D5D5D"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.5"
             android:text="credential id (referent)" />

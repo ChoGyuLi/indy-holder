@@ -36,7 +36,7 @@ public class VerificationRecyclerViewAdapter extends RecyclerView.Adapter<Verifi
                         ? attrs.get(item.getRequestedAttribute().getName())
                         : null
         );
-    } // 계좌번호, 사업자등록번호 빼
+    }
 
     @Override
     public int getItemCount() {

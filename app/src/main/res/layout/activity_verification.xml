@@ -4,38 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ivory"
     android:orientation="vertical"
     tools:context=".verification.VerificationActivity">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="증명서 제출"
-        android:textSize="36dp"
-        android:textStyle="bold" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_requested_attribute"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingVertical="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_requested_attribute" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/txt_schema_id_in_detail"
+            android:gravity="center"
+            android:background="@drawable/brown"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_margin="30dp"
+            android:layout_marginTop="50dp"
+            android:text="증명서 제출"
+            android:textSize="32dp"
+            android:fontFamily="@font/gmarketmedium"
+            android:textColor="@color/white"
+            tools:text="증명서 제출" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_requested_attribute"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="동의 및 제출" />
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_margin="20dp"
+            tools:listitem="@layout/item_requested_attribute" />
+
+
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn"
+        android:textColor="#5D5D5D"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:fontFamily="@font/gmarketmedium"
+        android:text="동의 및 제출" />
 
 </LinearLayout>

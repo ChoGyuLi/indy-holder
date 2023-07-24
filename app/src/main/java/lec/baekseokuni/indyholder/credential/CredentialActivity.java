@@ -62,7 +62,7 @@ public class CredentialActivity extends AppCompatActivity {
         AttributeRecyclerViewAdapter adapter = new AttributeRecyclerViewAdapter(attrs);
         rvAttributes.setAdapter(adapter);
 
-        Button submitButton = findViewById(R.id.del_btn);
+        Button submitButton = findViewById(R.id.sub_btn);
         submitButton.setOnClickListener(submit);
     }
 
